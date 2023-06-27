@@ -1,0 +1,26 @@
+[
+{
+"character_name": "Wheezy Goose",
+"user_id": 1,
+"stats_id": 1,
+"equipment_id": 1
+},
+{
+"character_name": "Vent",
+"user_id": 2,
+"stats_id": 2,
+"equipment_id": 2
+},
+{
+"character_name": "Buzy Bee",
+"user_id": 3,
+"stats_id": 3,
+"equipment_id": 3
+},
+{
+"character_name": "Grizzly Bear",
+"user_id": 4,
+"stats_id": 4,
+"equipment_id": 4
+}
+]

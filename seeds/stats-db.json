@@ -1,0 +1,26 @@
+
+[{
+"hp": 2,
+"Attack": 8,
+"Defense": 8,
+"Agility": 2
+},
+{
+"hp": 6,
+"Attack": 2,
+"Defense": 8,
+"Agility": 4
+},
+{ 
+"hp": 5,
+"Attack": 5,
+"Defense": 5,
+"Agility": 5
+},
+{
+ "hp": 4,
+"Attack": 6,
+"Defense": 6,
+"Agility": 4
+}
+]
