@@ -13,5 +13,9 @@ User.hasOne(Character, {
 Character.belongsTo(User, {
   foreignKey: 'user_id'
 });
+Stats.belongsTo(Character, {
+  foreignKey: 'stats_id'
+
+})
 
 module.exports = { User, Project };
