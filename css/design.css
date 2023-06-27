@@ -31,5 +31,10 @@ body {
     background-color: cadetblue;
     border-radius: 5px;
     padding: 20px;
-
+    color: white;
+    outline: none;
+}
+.btn:hover {
+    border-color: black;
+    
 }
