@@ -1,0 +1,62 @@
+[
+    {
+        "equipment_name": "short-sword",
+        "ability": "+ 2 attack damage",
+        "stat": 2
+    },
+    {
+        "equipment_name": "devils-horn",
+        "ability": "+ 4 attack damage",
+        "stat": 4
+    },
+    {
+        "equipment_name": "knights-shield",
+        "ability": "+ 3 defense",
+        "stat": 3
+    },
+    {
+        "equipment_name": "Ak-47",
+        "ability": "+ 5 attack damage",
+        "stat": 5
+    },
+    {
+        "equipment_name": "wings",
+        "ability": " + 4 agility",
+        "stat": 4
+    },
+    {
+        "equipment_name": "peasants-fit",
+        "ability": "+ 1 defense",
+        "stat": 1
+    },
+    {
+        "equipment_name": "ballarina outfit",
+        "ability": " + 5 agility",
+        "stat": 5
+    },
+    {
+        "equipment_name": "pencil",
+        "ability": " + 1 agility from practicing cursive",
+        "stat": 1
+    },
+    {
+        "equipment_name": "water jug",
+        "ability": " + 5 hp",
+        "stat": 5
+    },
+    {
+        "equipment_name": "egg",
+        "ability": " + 3 hp",
+        "stat": 3
+    },
+    {
+        "equipment_name": "stone-berry",
+        "ability": " + 1 hp",
+        "stat": 1
+    },
+    {
+        "equipment_name": "golden apple",
+        "ability": "gives + 10 hp",
+        "stat": 10
+    }
+]
