@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+{{#if character}}
+  <div>
+    <h3>Current Adventure:</h3>
+    <div>
+      {{#if character.charcter_name}}
+      <img src="../public/images/original_image/{{character.charcter_name}}" alt="Current character chosen {{character.charcter_name}}">
+      {{/if}}
+      <button data-story="{{save.id}}">Continue</button>
+      <button data-story='-1' type="button">Delete</button>
+    </div>
+  </div>
+{{#if}}
+
+<p>Just a warning if you begin a new story your current saved story will be lost</p>
+<a href="/newStory">Begin new Story</a>
