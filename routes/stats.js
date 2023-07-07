@@ -25,30 +25,33 @@ router.post('/seed', (req, res) => {
     stats.bulkCreate([
         User.init(
           {
-            "hp": 2,
-            "Attack": 8,
-            "Defense": 8,
-            "Agility": 2
+            id: {
+              type: DataTypes.INTEGER,
+              allowNull: false,
+              primaryKey: true,
+              autoIncrement: true,
             },
-            {
-            "hp": 6,
-            "Attack": 2,
-            "Defense": 8,
-            "Agility": 4
+            hp:{
+                type: DataTypes.INTEGER,
             },
-            { 
-            "hp": 5,
-            "Attack": 5,
-            "Defense": 5,
-            "Agility": 5
+            Attack:{
+                type: DataTypes.INTEGER,
             },
-            {
-            "hp": 4,
-            "Attack": 6,
-            "Defense": 6,
-            "Agility": 4
+            Defense:{
+                type: DataTypes.INTEGER,
+            },
+            Agility:{
+                type: DataTypes.INTEGER,
             }
-         
+          },
+          {
+            sequelize,
+            timestamps: false,
+            freezeTableName: true,
+            underscored: true,
+            modelName: 'stats',
+          }
+        
         )
       
           
