@@ -12,7 +12,7 @@ Story.init(
       autoIncrement: true,
     },
     tale:{
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(3000),
         allowNull: false,
     }
   },

@@ -2,7 +2,9 @@ const User = require('./User');
 const Character = require('./Character');
 // const Stats = require('./Stats');
 const Equipment = require('./Equipment');
-const Item = require('./Item')
+const Group = require('./Group')
+const Choice = require('./Choice')
+const Story = require('./Story')
 
 
 User.hasOne(Character, {
@@ -16,7 +18,21 @@ Character.belongsTo(User, {
 Stats.belongsTo(Character, {
   foreignKey: 'stats_id'
 
-})
+User.belongsTo(Story,{
+  foreignKey:'save'
+});
+
+Story.hasMany(User, {
+  foreignKey:'save'
+});
+
+Story.belongsToMany(Choice,{
+  through: Group
+});
+
+Choice.belongsToMany(Story,{
+  through: Group
+});
 
 module.exports = { 
   User, 
@@ -25,5 +41,5 @@ module.exports = {
   Stats, 
   Story, 
   Choice, 
-  Group 
+  StoryChoice 
 };
