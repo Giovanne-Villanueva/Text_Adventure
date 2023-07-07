@@ -1,0 +1,30 @@
+
+
+{{#if characters.length}}
+  <div>
+    <h3>Choose A Character:</h3>
+
+    {{#each characters as |character|}}
+    <div>
+      <div>
+        <h4>
+          <img class="character" src="/images/output/{{character.character_name}}.jpg" alt="An image of the character {{character.character_name}}">
+          {{character.character_name}}
+        </h4>
+        <ul>
+          <li>Characters Starting healthpoints:{{character.healthpoints}}</li>
+          <li>Hp Stat:{{character.stat.hp}}</li>
+          <li>Attack Stat:{{character.stat.Attack}}</li>
+          <li>Defense Stat:{{character.stat.Defense}}</li>
+          <li>Agility Stat:{{character.stat.Agility}}</li>
+        </ul>
+      </div>
+      <div>
+        <button class="chosen{{@index}}" data-id="{{character.id}}" type="button">Choose</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+<script src="/js/newStory.js"></script>

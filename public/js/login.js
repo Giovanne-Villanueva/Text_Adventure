@@ -43,25 +43,13 @@ const loginFormHandler = async (event) => {
       }
     }
   };
-  
-  const pickForm = async(event) => {
-    let change = Number(event.getAttribute('data-switch'));
-    if(change === 0){
-      document.location.replace('/login')
-    }
-    else{
-      document.location.replace('/signup')
-    }
-  }
-
+  try{
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
-  
-  document
+  }catch{
+    document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
+  }
   
-  document
-    .querySelector('.switch')
-    .addEventListener('click', pickForm);

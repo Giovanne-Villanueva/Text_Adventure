@@ -1,9 +1,12 @@
 const sequelize = require('../config/connection');
-const { User, Character, Stats, Equipment, Story,  } = require('../models');
+const { User, Character, Stats, Equipment, Story, Choice, StoryChoice } = require('../models');
 
 const userData = require('./userData.json');
 const characterData = require('./charData.json');
-const statsData = require('./statsData.json')
+const statsData = require('./statsData.json');
+const storyData = require('./storyData.json');
+const choiceData = require('./choiceData.json');
+const groupData = require('./groupData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -21,6 +24,12 @@ const seedDatabase = async () => {
     });
   }
 
+  const story  = await Story.bulkCreate(storyData);
+
+  const choice = await Choice.bulkCreate(choiceData);
+
+  const group = await StoryChoice.bulkCreate(groupData);
+  
   process.exit(0);
 };
 
