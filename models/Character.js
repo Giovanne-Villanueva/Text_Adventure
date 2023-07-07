@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Character extends Model {}
 
-User.init(
+Character.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,6 +14,14 @@ User.init(
     character_name:{
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    healthpoints:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 20
+    },
+    height:{
+      type: DataTypes.INTEGER
     },
     user_id: {
         type: DataTypes.INTEGER,

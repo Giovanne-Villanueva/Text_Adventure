@@ -2,7 +2,7 @@ const User = require('./User');
 const Character = require('./Character');
 // const Stats = require('./Stats');
 const Equipment = require('./Equipment');
-// const Item = require('./Item')
+const Item = require('./Item')
 
 
 User.hasOne(Character, {
@@ -13,8 +13,17 @@ User.hasOne(Character, {
 Character.belongsTo(User, {
   foreignKey: 'user_id'
 });
-Equipment.belongsTo(Character, {
-  foreignKey: 'equipment_id'
-});
+Stats.belongsTo(Character, {
+  foreignKey: 'stats_id'
 
-module.exports = { User, Project };
+})
+
+module.exports = { 
+  User, 
+  Character, 
+  Equipment, 
+  Stats, 
+  Story, 
+  Choice, 
+  Group 
+};

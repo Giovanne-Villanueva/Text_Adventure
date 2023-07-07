@@ -29,8 +29,14 @@ User.init(
         validate: {
         len: [8],
         },
+    },
+    save:{
+      type: DataTypes.INTEGER,
+        references: {
+          model: 'story',
+          key: 'id',
+        },
     }
-
   },
   {
     sequelize,
