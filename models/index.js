@@ -2,7 +2,7 @@ const User = require('./User');
 const Character = require('./Character');
 const Stats = require('./Stats');
 const Equipment = require('./Equipment');
-const Group = require('./Group')
+const StoryChoice = require('./StoryChoice')
 const Choice = require('./Choice')
 const Story = require('./Story')
 
@@ -43,11 +43,11 @@ Story.hasMany(User, {
 });
 
 Story.belongsToMany(Choice,{
-  through: Group
+  through: StoryChoice
 });
 
 Choice.belongsToMany(Story,{
-  through: Group
+  through: StoryChoice
 });
 
 module.exports = { 
@@ -57,5 +57,5 @@ module.exports = {
   Stats, 
   Story, 
   Choice, 
-  Group 
+  StoryChoice 
 };
