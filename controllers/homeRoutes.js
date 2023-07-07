@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Character, Stats, Equipment, Story, Choice, Group} = require('../models');
+const { User, Character, Stats, Equipment, Story, Choice, StoryChoice} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -54,6 +54,71 @@ router.get('/dashboard', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/newStory', withAuth, async (req, res) =>{
+  try{
+    const characterData = await Character.findAll({include:[{model:Stats}]});
+
+    const characters = characterData.map((character) => character.get({ plain: true }));
+    //console.log(characters)
+    res.render('newStory', {
+      characters,
+      logged_in: req.session.logged_in
+    });
+  } catch(err){
+    res.status(500).json(err);
+  }
+})
+
+router.get('/adventure', withAuth, async (req, res) =>{
+  try{
+    const storyData = await Story.findByPk(1, {include:[{model:Choice, through:{attributes:['id','choice_id', 'next_id']}}]});
+
+    if (!storyData) {
+      res
+        .status(400)
+        .json({ message: 'no starting adventure text' });
+      return;
+    }
+
+    const story = storyData.get({ plain: true });
+    /*try{
+      const story = storyData.get({ plain: true });
+    }catch{
+      console.log('failed');
+      return;
+    }*/
+    //console.log(story)
+    res.render('template', {
+      story,
+      logged_in: req.session.logged_in
+    });
+  } catch(err){
+    res.status(500).json(err);
+  }
+});
+
+router.get('/adventure/:id', withAuth, async (req, res) =>{
+  try{
+    const storyData = await Story.findByPk(req.params.id, {include:[{model:Choice}]});
+
+    if (!storyData) {
+      res
+        .status(400)
+        .json({ message: 'Next story sequence not found please try again later' });
+      return;
+    }
+
+    const story = storyData.get({ plain: true });
+    //console.log(story)
+    res.render('template', {
+      story,
+      logged_in: req.session.logged_in
+    });
+  } catch(err){
     res.status(500).json(err);
   }
 });

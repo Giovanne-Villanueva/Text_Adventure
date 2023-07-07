@@ -1,0 +1,52 @@
+[
+  {
+    "choice": "You attack the green man and take your chances to defeat him",
+    "effect":"fight",
+    "chosen":"true"
+  },
+  {
+    "choice": "You approach the green man and try to get more information on where you'er at",
+    "effect":"Neutral",
+    "chosen":"true"
+  },
+  {
+    "choice": "You approach the green man and try to charm the green man to fall for me",
+    "effect":"Positive",
+    "chosen":"true"
+  },
+  {
+    "choice": "You run away from the green man to find anything else in the grass field",
+    "effect":"Neutral",
+    "chosen":"true"
+  },
+  {
+    "choice": "You decide to go to the first key location",
+    "effect": "Neutral",
+    "chosen":"true"
+  },
+  {
+    "choice": "You decide to go to the castle directly",
+    "effect": "Neutral",
+    "chosen":"true"
+  },
+  {
+    "choice": "You decide to run away and go back to exploring the grass field",
+    "effect": "Neutral",
+    "chosen":"true"
+  },
+  {
+    "choice": "You decide to attack the cube",
+    "effect": "Fight",
+    "chosen":"true"
+  },
+  {
+    "choice": "You decide to appoarch the cube and try to communicate with the cube",
+    "effect": "Negative",
+    "chosen":"true"
+  },
+  {
+    "choice": "You decide to look fo a different cube",
+    "effect": "Neutral",
+    "chosen":"true"
+  }
+]
