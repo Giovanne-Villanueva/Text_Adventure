@@ -32,7 +32,7 @@
   {
     "story_id": 3,
     "choice_id": 7,
-    "next_id": null
+    "next_id": 7
   },
   {
     "story_id": 3,
@@ -42,11 +42,26 @@
   {
     "story_id": 4,
     "choice_id": 9,
-    "next_id": null
+    "next_id": 6
   },
   {
     "story_id": 4,
     "choice_id": 10,
+    "next_id": 7
+  },
+  {
+    "story_id":6,
+    "choice_id":null,
+    "next_id": null
+  },
+  {
+    "story_id":5,
+    "choice_id":null,
+    "next_id": null
+  },
+  {
+    "story_id":7,
+    "choice_id":null,
     "next_id": null
   }
 ]

@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Equipment extends Model {}
+class Equipment extends Model { }
 
 Equipment.init(
   {
@@ -12,19 +12,19 @@ Equipment.init(
       autoIncrement: true,
     },
     equipment_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    ability:{
-        type: DataTypes.STRING,
-        allowNull: false,
+    ability: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    stats_id:{
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'stats',
-            key: 'id',
-        },
+    stats_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'stats',
+        key: 'id',
+      },
     }
   },
   {
