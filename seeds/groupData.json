@@ -2,12 +2,12 @@
   {
     "story_id": 1,
     "choice_id": 1,
-    "next_id": null
+    "next_id": 6
   },
   {
     "story_id": 1,
     "choice_id": 2,
-    "next_id": null
+    "next_id": 6
   },
   {
     "story_id": 1,
@@ -17,7 +17,7 @@
   {
     "story_id": 1,
     "choice_id": 4,
-    "next_id": null
+    "next_id": 7
   },
   {
     "story_id": 2,
@@ -27,12 +27,12 @@
   {
     "story_id": 2,
     "choice_id": 6,
-    "next_id": null
+    "next_id": 6
   },
   {
     "story_id": 2,
     "choice_id": 7,
-    "next_id": null
+    "next_id": 7
   },
   {
     "story_id": 3,
@@ -42,11 +42,26 @@
   {
     "story_id": 3,
     "choice_id": 9,
-    "next_id": null
+    "next_id": 6
   },
   {
     "story_id": 3,
     "choice_id": 10,
+    "next_id": 7
+  },
+  {
+    "story_id":6,
+    "choice_id":null,
+    "next_id": null
+  },
+  {
+    "story_id":5,
+    "choice_id":null,
+    "next_id": null
+  },
+  {
+    "story_id":7,
+    "choice_id":null,
     "next_id": null
   }
 ]
