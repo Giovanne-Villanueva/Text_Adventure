@@ -1,6 +1,6 @@
-const mysql = require('mysql')
-const express = require('express')
-const app = express()
+const mysql = require('mysql');
+const express = require('express').Router();
+const app = express();
 const connection = mysql.createConnection({
     host: '',
     user: '',
@@ -48,18 +48,7 @@ function showInventory(){
 
 }
 // replaces items in the database
-function updateStats() {
-// sequelize .get then a .put
-    // var char_stat = 5;
-    // var item_value = ;
-    // var new_stat = char_stat + item_value;
-    // db.query(`INSERT INTO () VALUE ${new_stat}`),
-
-    
-const newStat = await hp.increment('stat', { by: 2 });
-    (err) => { if(err) {console.error(err) } 
-        else console.log("character stats updated")}
-}
+// function updateStats() {
 
 
 
@@ -68,3 +57,6 @@ app.listen(3000, () => {
     console.log('Server started on port 3000');
   });
 
+
+
+  

@@ -17,6 +17,10 @@ const chosenOption = async(event)=>{
       break;
     case 'Neutral':
       //do nothing procced to the next scene
+      response = await fetch('/api') {
+        method: 'GET',
+        headers: 
+      }
       break;
     case 'Positive':
       //gain an equipment item to improve stats
