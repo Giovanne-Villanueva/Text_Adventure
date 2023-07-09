@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Adventure</title>
-    <link rel="stylesheet" href="./css/design.css">
+    {{#if deepPath}}
+        <link rel="stylesheet" href="../css/dis/output.css">
+        <link rel="stylesheet" href="../css/design.css">
+    {{else}}
+        <link rel="stylesheet" href="./css/dis/output.css">
+        <link rel="stylesheet" href="./css/design.css">
+    {{/if}}
 </head>
 <body>
     <div>

@@ -10,33 +10,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/blog/:id', async (req, res) => {
-  try {
-    const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Comment,
-          include:{model:User, attributes:['name']}
-        }
-      ],
-    });
-
-    const blog = blogData.get({ plain: true });
-
-    console.log(blog.comments)
-
-    res.render('blog', {
-      ...blog,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+router.get('/ending', withAuth, async (req, res) => {
+  res.render('ending', { logged_in: req.session.logged_in})
+})
 
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -44,14 +20,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Character }, { model: Story} ],
+      include: [{ model: Character }],
     });
 
     const user = userData.get({ plain: true });
     console.log(user)
     res.render('dashboard', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -60,10 +36,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 router.get('/newStory', withAuth, async (req, res) =>{
   try{
-    const characterData = await Character.findAll({include:[{model:Stats}]});
+    const characterData = await Character.findAll({where:{user_id:null}, include:[{model:Stats}]} );
 
     const characters = characterData.map((character) => character.get({ plain: true }));
-    //console.log(characters)
+    console.log(characters)
     res.render('newStory', {
       characters,
       logged_in: req.session.logged_in
@@ -76,15 +52,19 @@ router.get('/newStory', withAuth, async (req, res) =>{
 router.get('/adventure', withAuth, async (req, res) =>{
   try{
     const storyData = await Story.findByPk(1, {include:[{model:Choice, through:{attributes:['id','choice_id', 'next_id']}}]});
-
-    if (!storyData) {
+    const characterName = await Character.findOne({
+      where:{user_id:req.session.user_id},
+      attributes:['character_name']});
+    
+    if (!storyData || !characterName) {
       res
         .status(400)
-        .json({ message: 'no starting adventure text' });
+        .json({ message: 'Next story sequence not found please try again later' });
       return;
     }
 
     const story = storyData.get({ plain: true });
+    const name = characterName.get({ plain:true });
     /*try{
       const story = storyData.get({ plain: true });
     }catch{
@@ -94,6 +74,7 @@ router.get('/adventure', withAuth, async (req, res) =>{
     //console.log(story)
     res.render('template', {
       story,
+      name,
       logged_in: req.session.logged_in
     });
   } catch(err){
@@ -104,8 +85,10 @@ router.get('/adventure', withAuth, async (req, res) =>{
 router.get('/adventure/:id', withAuth, async (req, res) =>{
   try{
     const storyData = await Story.findByPk(req.params.id, {include:[{model:Choice}]});
-
-    if (!storyData) {
+    const characterName = await Character.findOne({
+      where:{user_id:req.session.user_id},
+      attributes:['character_name']});
+    if (!storyData || !characterName) {
       res
         .status(400)
         .json({ message: 'Next story sequence not found please try again later' });
@@ -113,10 +96,13 @@ router.get('/adventure/:id', withAuth, async (req, res) =>{
     }
 
     const story = storyData.get({ plain: true });
-    //console.log(story)
+    const name = characterName.get({ plain:true });
+    console.log(name)
     res.render('template', {
       story,
-      logged_in: req.session.logged_in
+      name,
+      logged_in: req.session.logged_in,
+      deepPath:true
     });
   } catch(err){
     res.status(500).json(err);

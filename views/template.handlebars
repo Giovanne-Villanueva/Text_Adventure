@@ -1,15 +1,19 @@
 <div class = "container">
     <div id = "text">{{story.tale}}</div>
         <div id = "option-buttons" class = "btn-grid">
-        {{#each story.choices as |option| }}
-            {{#if option.storyChoice.next_id}}
-                <button class = "btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="{{option.storyChoice.next_id}}">{{option.choice}}</button>
-            {{else}}
-                <button class = "btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="none">{{option.choice}}</button>
-            {{/if}}
-        {{/each}}
+        {{#if story.choices}}
+            {{#each story.choices as |option| }}
+                {{#if option.storyChoice.next_id}}
+                    <button class = "btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="{{option.storyChoice.next_id}}">{{option.choice}}</button>
+                {{else}}
+                    <button class = "btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="none">{{option.choice}}</button>
+                {{/if}}
+            {{/each}}
+        {{else}}
+             <a href="/ending">Proceed to ending screen</a>
+        {{/if}}
     </div> 
-   <img src="/images/output/vent.jpg" alt="Dog staring at sky">
+   <img src="/images/output/{{name.character_name}}.jpg" alt="user current character image">
 </div>
 
 <script src="/js/adventure.js"></script>

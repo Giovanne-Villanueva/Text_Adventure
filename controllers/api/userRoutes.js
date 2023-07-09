@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 router.put('/', async (req, res) => {
   try{
     
-    const userData = await User.update({save:req.body.save}, {where:{ id:req.session.user_id}});
+    const userData = await User.update(req.body, {where:{ id:req.session.user_id}});
     if (!userData) {
       res
         .status(400)
