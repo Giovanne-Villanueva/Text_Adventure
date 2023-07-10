@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Adventure</title>
-    {{#if deepPath}}
-        <link rel="stylesheet" href="../css/dis/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--{{#unless logged_in}}
         <link rel="stylesheet" href="../css/design.css">
-    {{else}}
-        <link rel="stylesheet" href="./css/dis/output.css">
-        <link rel="stylesheet" href="./css/design.css">
-    {{/if}}
+    {{/unless}} -->
 </head>
-<body>
+<body class="bg-slate-700 text-white">
     <div>
-        <header>
-            <h1>
-                Text Adventure
-            </h1>
-        </header>
-        <nav>
-        <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <button class="no-button" id="logout">logout</button>
+            <header class="flex p-5 bg-slate-900 flex-col justify-center md:flex-row md:justify-start md:justify-between lg:flex-row lg:justify-start lg:justify-between">
+                <h1 class="text-center text-white text-lg sm:text-2xl md:text-5xl">
+                    Text Adventure
+                </h1>
+                <nav class="grid grid-cols-4 w-full md:w-1/2 ">
+                    <!-- Conditionally render login or logout links -->
+                    <button class="col-end-5 col-span-1 w-full p-2 rounded-md bg-cyan-700 text-white md:h-min no-button" id="logout">logout</button>
+                </nav>
+            </header>
+        {{else}}
+            <header class="flex p-5 bg-slate-900 flex-col justify-center">
+                <h1 class="text-center text-white sm:text-2xl md:text-5xl">
+                    Text Adventure
+                </h1>
+            </header>
         {{/if}}
-      </nav>
       <main>
         {{{body}}}
       </main>

@@ -2,29 +2,27 @@
 
 {{#if characters.length}}
   <div>
-    <h3>Choose A Character:</h3>
+    <h3 class="text-base sm:text-xl md:text-2xl">Choose A Character:</h3>
 
+    <div class="flex flex-col flex-wrap justify-center content-center mt-2 md:flex-row">
     {{#each characters as |character|}}
-    <div>
-      <div>
-        <h4>
-          <img class="character" src="/images/output/{{character.character_name}}.jpg" alt="An image of the character {{character.character_name}}">
+      <div class="flex flex-col content-center md:w-2/6 md:mx-6">
+        <h3>
+          <img class="character mx-6 sm:mx-8 md:mx-10 lg:mx-36" src="/images/output/{{character.character_name}}.jpg" alt="An image of the character {{character.character_name}}">
           {{character.character_name}}
-        </h4>
-        <ul>
-          <li>Characters Starting healthpoints:{{character.healthpoints}}</li>
-          <li>Hp Stat:{{character.stat.hp}}</li>
-          <li>Attack Stat:{{character.stat.Attack}}</li>
-          <li>Defense Stat:{{character.stat.Defense}}</li>
-          <li>Agility Stat:{{character.stat.Agility}}</li>
+        </h3>
+        <ul class="flex flex-col text-sm sm:text-base md:text-lg">
+          <li class="block w-full">Characters Starting healthpoints:{{character.healthpoints}}</li>
+          <li class="block w-full">Hp Stat:{{character.stat.hp}}</li>
+          <li class="block w-full">Attack Stat:{{character.stat.Attack}}</li>
+          <li class="block w-full">Defense Stat:{{character.stat.Defense}}</li>
+          <li class="block w-full">Agility Stat:{{character.stat.Agility}}</li>
         </ul>
+        <button class="chosen{{@index}} w-full p-2 my-4 rounded-md bg-cyan-700" data-id="{{character.id}}" type="button">Choose</button>
       </div>
-      <div>
-        <button class="chosen{{@index}}" data-id="{{character.id}}" type="button">Choose</button>
-      </div>
-    </div>
     {{/each}}
+    </div>   
   </div>
-  {{/if}}
+{{/if}}
 
 <script src="/js/newStory.js"></script>

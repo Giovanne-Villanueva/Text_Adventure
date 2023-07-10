@@ -2,51 +2,121 @@
   {
     "choice": "You attack the green man and take your chances to defeat him",
     "effect":"fight",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You approach the green man and try to get more information on where you'er at",
     "effect":"Neutral",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You approach the green man and try to charm the green man to fall for me",
     "effect":"Positive",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You run away from the green man to find anything else in the grass field",
     "effect":"Neutral",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You decide to go to the first key location",
     "effect": "Neutral",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You decide to go to the castle directly",
     "effect": "Neutral",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You decide to run away and go back to exploring the grass field",
     "effect": "Neutral",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You decide to attack the cube",
     "effect": "Fight",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You decide to appoarch the cube and try to communicate with the cube",
     "effect": "Negative",
-    "chosen":"true"
+    "chosen":true
   },
   {
     "choice": "You decide to look fo a different cube",
     "effect": "Neutral",
-    "chosen":"true"
+    "chosen":true
+  },
+  {
+    "choice": "Honk angrily.",
+    "effect": "Neutral",
+    "chosen": true
+  },
+  {
+    "choice": "Recede into the woods.",
+    "effect": "Neutral",
+    "chosen": true
+  },
+  {
+    "choice": "Ransack the vehicle.",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "Honk a timid greeting.",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "Waddle over to the inn and eatery.",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "Cozy…too cozy? Run away!",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "Lie there like goose-droppings?",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "drag muddy body up.",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "Attack!",
+    "effect": "fight",
+    "chosen": "true"
+  },
+  {
+    "choice": "Run!",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "accept the free ride.",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "politely honk a decline.",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "Go back to the inn.",
+    "effect": "Neutral",
+    "chosen": "true"
+  },
+  {
+    "choice": "See where this goes.",
+    "effect": "Neutral",
+    "chosen": "true"
   }
 ]
