@@ -48,7 +48,8 @@ router.put('/', async(req, res)=> {
 
 router.get('/', async (req, res) => {
   try {
-    const characterData = await Character.findOne({where:{user_id:req.session.user_id}}, {include:[{model:Stats}]});
+    const characterData = await Character.findOne({where:{user_id:req.session.user_id}, include:[{model:Stats}]});
+    //console.log(characterData)
     if(!characterData){
       res.status(400).json({ message: 'There was an error in retrieving your character data' });
       return;

@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const equipment = require('../../models/equipment');
+const { where } = require('sequelize');
+const { Equipment, Stats } = require('../../models');
 
 // GET all equipments
 router.get('/', (req, res) => {
   // Get all equipments from the equipment table
-  equipment.findAll().then((equipmentData) => {
+  Equipment.findAll().then((equipmentData) => {
     res.json(equipmentData);
   });
 });
@@ -14,14 +15,14 @@ router.get('/', (req, res) => {
 // GET a single equipment
 router.get('/:id', (req, res) => {
   // Find a single equipment by its primary key (equipment_id)
-  equipment.findByPk(req.params.id).then((equipmentData) => {
+  Equipment.findByPk(req.params.id).then((equipmentData) => {
     res.json(equipmentData);
   });
 });
 
 // CREATE a equipment
 router.post('/', (req, res) => {
-  equipment.create(req.body)
+  Equipment.create(req.body)
     .then((newEquipment) => {
       res.json(newEquipment);
     })
@@ -32,7 +33,7 @@ router.post('/', (req, res) => {
 
 // CREATE multiple equipments
 router.post('/seed', (req, res) => {
-  equipment.bulkCreate([
+  Equipment.bulkCreate([
     {
         id: {
           type: DataTypes.INTEGER,
