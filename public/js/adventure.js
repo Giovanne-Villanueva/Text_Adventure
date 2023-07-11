@@ -53,7 +53,6 @@ const chosenOption = async(event)=>{
         alert(update.statusText);
         return;
       }
-
     }
     const userData = await fetch('/api/users', {
       method: 'PUT',

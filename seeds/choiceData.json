@@ -1,13 +1,63 @@
 [
   {
+    "choice": "You attack the green man and take your chances to defeat him",
+    "effect":"fight",
+    "chosen":true
+  },
+  {
+    "choice": "You approach the green man and try to get more information on where you'er at",
+    "effect":"Neutral",
+    "chosen":true
+  },
+  {
+    "choice": "You approach the green man and try to charm the green man to fall for me",
+    "effect":"Positive",
+    "chosen":true
+  },
+  {
+    "choice": "You run away from the green man to find anything else in the grass field",
+    "effect":"Neutral",
+    "chosen":true
+  },
+  {
+    "choice": "You decide to go to the first key location",
+    "effect": "Neutral",
+    "chosen":true
+  },
+  {
+    "choice": "You decide to go to the castle directly",
+    "effect": "Neutral",
+    "chosen":true
+  },
+  {
+    "choice": "You decide to run away and go back to exploring the grass field",
+    "effect": "Neutral",
+    "chosen":true
+  },
+  {
+    "choice": "You decide to attack the cube",
+    "effect": "Fight",
+    "chosen":true
+  },
+  {
+    "choice": "You decide to appoarch the cube and try to communicate with the cube",
+    "effect": "Negative",
+    "chosen":true
+  },
+  {
+    "choice": "You decide to look fo a different cube",
+    "effect": "Neutral",
+    "chosen":true
+  },
+  {
     "choice": "Honk angrily.",
     "effect": "Neutral",
-    "chosen": "true"
+    "chosen": true
   },
   {
     "choice": "Recede into the woods.",
     "effect": "Neutral",
-    "chosen": "ture"
+    "chosen": true
   },
   {
     "choice": "Ransack the vehicle.",
@@ -20,7 +70,7 @@
     "chosen": "true"
   },
   {
-    "chocie": "Waddle over to the inn and eatery.",
+    "choice": "Waddle over to the inn and eatery.",
     "effect": "Neutral",
     "chosen": "true"
   },
@@ -30,13 +80,13 @@
     "chosen": "true"
   },
   {
-    "chocie": "Lie there like goose-droppings?",
+    "choice": "Lie there like goose-droppings?",
     "effect": "Neutral",
     "chosen": "true"
   },
   {
-    "chocie": "drag muddy body up.",
-    "effetc": "Neutral",
+    "choice": "drag muddy body up.",
+    "effect": "Neutral",
     "chosen": "true"
   },
   {
@@ -50,22 +100,22 @@
     "chosen": "true"
   },
   {
-    "chocie": "accept the free ride.",
+    "choice": "accept the free ride.",
     "effect": "Neutral",
     "chosen": "true"
   },
   {
-    "chocie": "politely honk a decline.",
+    "choice": "politely honk a decline.",
     "effect": "Neutral",
     "chosen": "true"
   },
   {
-    "chocie": "Go back to the inn.",
+    "choice": "Go back to the inn.",
     "effect": "Neutral",
     "chosen": "true"
   },
   {
-    "chocie": "See where this goes.",
+    "choice": "See where this goes.",
     "effect": "Neutral",
     "chosen": "true"
   }

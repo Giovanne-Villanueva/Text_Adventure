@@ -49,3 +49,13 @@ Story.belongsToMany(Choice,{
 Choice.belongsToMany(Story,{
   through: StoryChoice
 });
+
+module.exports = { 
+  User, 
+  Character, 
+  Equipment, 
+  Stats, 
+  Story, 
+  Choice, 
+  StoryChoice 
+};
