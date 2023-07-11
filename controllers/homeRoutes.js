@@ -49,6 +49,33 @@ router.get('/newStory', withAuth, async (req, res) =>{
   }
 })
 
+router.get('/Goose',  withAuth, async (req, res) =>{
+  try{
+    const storyData = await Story.findByPk(8, {include:[{model:Choice, through:{attributes:['id','choice_id', 'next_id']}}]});
+    const characterName = await Character.findOne({
+      where:{user_id:req.session.user_id},
+      attributes:['character_name']});
+    
+    if (!storyData || !characterName) {
+      res
+        .status(400)
+        .json({ message: 'Next story sequence not found please try again later' });
+      return;
+    }
+
+    const story = storyData.get({ plain: true });
+    const name = characterName.get({ plain:true });
+ 
+    res.render('template', {
+      story,
+      name,
+      logged_in: req.session.logged_in
+    });
+  } catch(err){
+    res.status(500).json(err);
+  }
+});
+
 router.get('/adventure', withAuth, async (req, res) =>{
   try{
     const storyData = await Story.findByPk(1, {include:[{model:Choice, through:{attributes:['id','choice_id', 'next_id']}}]});
@@ -65,13 +92,7 @@ router.get('/adventure', withAuth, async (req, res) =>{
 
     const story = storyData.get({ plain: true });
     const name = characterName.get({ plain:true });
-    /*try{
-      const story = storyData.get({ plain: true });
-    }catch{
-      console.log('failed');
-      return;
-    }*/
-    //console.log(story)
+ 
     res.render('template', {
       story,
       name,
