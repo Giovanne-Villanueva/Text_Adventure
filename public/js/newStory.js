@@ -3,7 +3,10 @@ const makeCharacter = async(event)=>{
   console.log(event)
   const element = event.target;
   const id = element.getAttribute('data-id');
-  const save = 1
+  let save = 1;
+  if(Number(id) === 1) {
+    save = 8;
+  }
   console.log(id)
   const response = await fetch('/api/characters', {
     method: 'POST',
@@ -18,7 +21,12 @@ const makeCharacter = async(event)=>{
       headers: { 'Content-Type': 'application/json' },
     });
     if(update.ok){
-      document.location.replace('/adventure');
+      if(Number(id) === 1) {
+        document.location.replace('/Goose');
+      }
+      else {
+        document.location.replace('/adventure');
+      }
     }
     else{
       alert(update.statusText);
