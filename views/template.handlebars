@@ -1,20 +1,19 @@
-<div class="container mx-auto grid bg-white text-black grid-cols-2 rounded-md my-10 p-2">
-    <p class="col-span-2 m-5" id = "text">{{story.tale}}</p>
-    <img class="ml-2 sm:ml-14 lg:ml-16 col-span-2 sm:col-span-1" src="/images/output/{{name.character_name}}.jpg" alt="user current character image">
-        <div id = "option-buttons" class = " flex flex-col flex-wrap justify-between btn-grid w-full mx-2">
+<div class = "container">
+    <div id = "text">{{story.tale}}</div>
+        <div id = "option-buttons" class = "btn-grid">
         {{#if story.choices}}
             {{#each story.choices as |option| }}
                 {{#if option.storyChoice.next_id}}
-                    <button class = "sm:w-10/12 p-2 rounded-md my-3 bg-cyan-700 btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="{{option.storyChoice.next_id}}">{{option.choice}}</button>
+                    <button class = "btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="{{option.storyChoice.next_id}}">{{option.choice}}</button>
                 {{else}}
-                    <button class = "sm:w-10/12 p-2 rounded-md my-3 bg-cyan-700 btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="none">{{option.choice}}</button>
+                    <button class = "btn chosen{{@index}}" data-effect="{{option.effect}}" data-next="none">{{option.choice}}</button>
                 {{/if}}
             {{/each}}
         {{else}}
-             <a class = "sm:w-10/12 p-2 rounded-md my-3 bg-cyan-700 btn" href="/ending">Proceed to ending screen</a>
+             <a href="/ending">Proceed to ending screen</a>
         {{/if}}
     </div> 
-   
+   <img src="/images/output/{{name.character_name}}.jpg" alt="user current character image">
 </div>
 
 <script src="/js/adventure.js"></script>
