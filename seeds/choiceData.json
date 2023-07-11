@@ -20,17 +20,22 @@
     "chosen":true
   },
   {
-    "choice": "You decide to go to the first key location",
+    "chocie": "Lie there like goose-droppings?",
     "effect": "Neutral",
     "chosen":true
   },
   {
-    "choice": "You decide to go to the castle directly",
+    "choice": "Attack!",
+    "effect": "fight",
+    "chosen": "true"
+  },
+  {
+    "choice": "Run!",
     "effect": "Neutral",
     "chosen":true
   },
   {
-    "choice": "You decide to run away and go back to exploring the grass field",
+    "chocie": "accept the free ride.",
     "effect": "Neutral",
     "chosen":true
   },
@@ -45,7 +50,7 @@
     "chosen":true
   },
   {
-    "choice": "You decide to look fo a different cube",
+    "chocie": "See where this goes.",
     "effect": "Neutral",
     "chosen":true
   },
